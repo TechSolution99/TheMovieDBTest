@@ -19,19 +19,19 @@ function App() {
   const filterRate = useSelector(MovieSelectors.selectFilterRate);
   useEffect( () => {
     axios.get(process.env.REACT_APP_GENRE_LIST_API).then((res => {
-      dispatch(MovieActions.setGenreList(res.genres));
+      dispatch(MovieActions.setGenreList(res.data.genres));
       setLoadingGenre(false);
     })).catch((e) => {
       setLoadingMessage('Failed to fetch data from API.');
     });
 
     axios.get(process.env.REACT_APP_MOVIE_LIST_API).then((res => {
-      setMoiveList(res.results);
+      setMoiveList(res.data.results);
       setLoadingMovieList(false);
     })).catch((e) => {
       setLoadingMessage('Failed to fetch data from API.');
     });
-  });
+  }, []);
   return (
     <Box>
       <Typography className='header' variant='h2'>TheMovieDB Test</Typography>

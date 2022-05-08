@@ -45,7 +45,7 @@ export default function MovieCard(props) {
                 }}>
                     <Rating name="half-rating-read" defaultValue={1} precision={1} max={1} readOnly />
                     <Typography>{vote}</Typography>
-                </Box>            
+                </Box>
                 {
                     genreIds.map( (genreId, index) => {
                         const genreName = genreList.find((genre) => {
