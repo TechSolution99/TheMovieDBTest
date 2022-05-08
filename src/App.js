@@ -12,7 +12,7 @@ import MovieActions, {MovieSelectors} from './redux/MovieRedux'
 function App() {
   const [loadingGenre, setLoadingGenre] = useState(true);
   const [loadingMovieList, setLoadingMovieList] = useState(true);
-  const [movieList, setMoiveList] = useState([]);
+  const [movieList, setMovieList] = useState([]);
   const [loadingMessage, setLoadingMessage] = useState('Loading data...');
   const dispatch = useDispatch();
   const filteredGenres = useSelector(MovieSelectors.selectFilteredGenres);
@@ -26,7 +26,7 @@ function App() {
     });
 
     axios.get(process.env.REACT_APP_MOVIE_LIST_API).then((res => {
-      setMoiveList(res.data.results);
+      setMovieList(res.data.results);
       setLoadingMovieList(false);
     })).catch((e) => {
       setLoadingMessage('Failed to fetch data from API.');
