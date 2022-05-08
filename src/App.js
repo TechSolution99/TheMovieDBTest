@@ -48,7 +48,7 @@ function App() {
                       return filteredGenre === genreId;
                     });
                   })) {
-                    return <MovieCard imgPath={process.env.REACT_APP_IMAGE_URL_PREFIX + movie.backdrop_path} title={movie.title} vote={movie.vote_average} genreIds={movie.genre_ids} overview={movie.overview} key={movie.id}></MovieCard>
+                    return <MovieCard imgPath={process.env.REACT_APP_IMAGE_URL_PREFIX + (movie.backdrop_path ? movie.backdrop_path : movie.poster_path)} title={movie.title} vote={movie.vote_average} genreIds={movie.genre_ids} overview={movie.overview} key={movie.id}></MovieCard>
                   }
                 }
                 return '';
