@@ -1,6 +1,4 @@
 import { createReducer, createActions } from 'reduxsauce';
-import { useSelector } from 'react-redux';
-// import apisauce from 'apisauce';
 
 /* --------------------- Types and Action Creators ---------------- */
 const { Types, Creators } = createActions({
@@ -10,32 +8,6 @@ const { Types, Creators } = createActions({
   addFilteredGenre: ['genre'],
   removeFilteredGenre: ['genre'],
 });
-
-Creators.getData = () => {
-  return async dispatch => {
-    /*const api = apisauce.create({
-      baseURL: 'http://localhost:8000/',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      responseType: 'json'
-    });
-    const resp = await api.post('login', {
-      email: email,
-      password: password
-    });
-  
-    if (resp.ok) {
-      console.log(resp.data);
-      dispatch(Creators.setUsername(resp.data['username']));
-      return resp.data;
-    } else {
-      alert('There was problem login');
-      return resp.data;
-    }
-  */
-  };
-};
 
 export const MovieTypes = Types;
 

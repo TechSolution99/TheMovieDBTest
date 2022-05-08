@@ -1,18 +1,24 @@
+.cardContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-column-gap: 20px;
+}
+
 .card:hover img { 
     /* filter: blur(20px); */
 }
 
 .card {
-    display: 'inline-block';
-    max-width: '500px';
-    min-width: '300px';
-    border: '1px solid lightgray';
-    border-radius: '7px';
+    display: inline-block;
+    max-width: 500px;
+    min-width: 300px;
+    border: 1px solid lightgray;
+    border-radius: 7px;
     cursor: pointer;
     margin: 20px 0px 0px 0px;
     top: 0;
     position: relative;
-    transition: transform ease 2s;
+    transition: transform 2s ease;
 }
 
 .card:hover {

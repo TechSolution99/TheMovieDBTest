@@ -28,7 +28,6 @@ export default function FilterBox(props) {
     const filterRate = useSelector(MovieSelectors.selectFilterRate);
     const filteredGenres = useSelector(MovieSelectors.selectFilteredGenres);
     const genreList = useSelector(MovieSelectors.selectGenreList);
-    const [rateHover, setRateHover] = useState(-1);
     const [filterExpanded, setFilterExpanded] = useState(true);
   
     const handleExpandFilterClick = () => {
@@ -78,9 +77,6 @@ export default function FilterBox(props) {
                     <Rating name="half-rating-read" defaultValue={0} precision={1} max={10} value={filterRate}
                         onChange={(e, newVal) => {
                             dispatch(MovieActions.setFilterRate(newVal ? newVal : 0));
-                        }}
-                        onChangeActive={(e, newVal) => {
-                            setRateHover(newVal);
                         }}/>
                     <Typography sx={{
                         marginLeft: '10px',
