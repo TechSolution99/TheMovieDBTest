@@ -1,0 +1,64 @@
+.card:hover img { 
+    /* filter: blur(20px); */
+}
+
+.card {
+    display: 'inline-block';
+    max-width: '500px';
+    min-width: '300px';
+    border: '1px solid lightgray';
+    border-radius: '7px';
+    cursor: pointer;
+    margin: 20px 0px 0px 0px;
+    top: 0;
+    position: relative;
+    transition: transform ease 2s;
+}
+
+.card:hover {
+    transform: translateY(-1%);
+    box-shadow: 0 1rem 1rem rgba(0, 0, 0, .2);
+}
+
+.card:hover .movieOverview {
+    transform: translateY(0);
+}
+.card:hover .cardMedia:before {
+    /* z-index: 1; */
+    display: block;
+    position: absolute;
+    content: ' ';
+    width: 100%;
+    height: 225px;
+    background-size: cover;
+    background-color: #000000c0;
+}
+
+.movieOverview {
+    position: absolute;
+    top: 0;
+    padding: 10px;
+    box-sizing: border-box;
+    color: white;
+    width: 100%;
+    height: 225px;
+    display: block;
+    transform: translateY(-100%);
+    transition: transform 0.4s ease-out;
+    overflow-y: auto;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.movieOverview::-webkit-scrollbar {
+    display: none;
+}
+
+.imgLoading {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 90px;
+    margin-left: auto;
+    margin-right: auto;
+}
