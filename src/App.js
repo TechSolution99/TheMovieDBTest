@@ -18,14 +18,14 @@ function App() {
   const filteredGenres = useSelector(MovieSelectors.selectFilteredGenres);
   const filterRate = useSelector(MovieSelectors.selectFilterRate);
   useEffect( () => {
-    axios.get(process.env.REACT_APP_GENRE_LIST_API).then((res => {
+    axios.get(process.env.REACT_APP_BASE_URL + process.env.REACT_APP_GENRE_LIST_API).then((res => {
       dispatch(MovieActions.setGenreList(res.data.genres));
       setLoadingGenre(false);
     })).catch((e) => {
       setLoadingMessage('Failed to fetch data from API.');
     });
 
-    axios.get(process.env.REACT_APP_MOVIE_LIST_API).then((res => {
+    axios.get(process.env.REACT_APP_BASE_URL + process.env.REACT_APP_MOVIE_LIST_API).then((res => {
       setMovieList(res.data.results);
       setLoadingMovieList(false);
     })).catch((e) => {
